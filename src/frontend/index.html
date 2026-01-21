@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lumina Blog Platform</title>
+
+  <!-- React & ReactDOM (CDN) -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+  <!-- Babel (for JSX in the browser) -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <!-- Tailwind CSS (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind config (external) -->
+  <script src="./tailwind-config.js"></script>
+
+  <!-- Custom CSS (external) -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body class="bg-gray-50 dark:bg-gray-950 transition-colors duration-300">
+  <div id="root"></div>
+
+  <!-- App (React + JSX) -->
+  <script type="text/babel" src="./app.js"></script>
+</body>
+</html>
