@@ -24,7 +24,7 @@ services:
 
   frontend:
     build:
-      context: ./Frontend/lumina-seperated
+      context: ./Frontend/lumina-separated
     container_name: lumina-frontend
     restart: unless-stopped
     ports:
