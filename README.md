@@ -186,7 +186,7 @@ cd Lumina_Blog
 
 ---
 
-### Running the Application (Recommended Method)
+### Running the Application 
 
 #### Build and Start All Services
 
