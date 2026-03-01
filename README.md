@@ -148,7 +148,7 @@ git push origin develop
 
 ---
 
-## Dockerised Application Instructions (Assignment 2 Update)
+## Dockerised Application Instructions
 
 ### Overview
 The Lumina Blog platform is deployed using a multi-container Docker architecture consisting of:
