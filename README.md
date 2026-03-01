@@ -89,3 +89,108 @@ mkdir -p .github/workflows
 git add .
 git commit -m "chore: initial repository setup"
 git push origin develop
+
+# Dockerised Application Instructions (Assignment 2 Update)
+
+## Overview
+
+The Lumina Blog platform is deployed using a multi-container Docker architecture consisting of:
+
+- MongoDB (Database)
+- Backend API Service
+- Frontend Web Server
+
+All services are orchestrated using Docker Compose.
+
+---
+
+## Prerequisites
+
+Ensure the following are installed:
+
+- Docker Engine (v20.10 or higher recommended)
+- Docker Compose (v2+)
+- Git
+
+Verify installation:
+
+    docker --version
+    docker compose version
+
+---
+
+## Cloning the Repository
+
+    git clone https://github.com/SKaushalya21/Lumina_Blog.git
+    cd Lumina_Blog
+
+---
+
+## Running the Application (Recommended Method)
+
+### Build and Start All Services
+
+From the project root directory (where docker-compose.yml is located):
+
+    docker compose up --build
+
+This command will:
+
+- Build the backend image
+- Build the frontend image
+- Pull the MongoDB image
+- Create containers
+- Configure internal networking
+- Start all services
+
+---
+
+## Accessing the Application
+
+Frontend Application:
+    http://localhost:8080/
+
+Backend API:
+    http://localhost:5000/
+
+MongoDB:
+    mongodb://localhost:27017
+
+---
+
+## Port Configuration
+
+| Service   | Container Port | Host Port |
+|-----------|---------------|-----------|
+| Frontend  | 80            | 8080      |
+| Backend   | 5000          | 5000      |
+| MongoDB   | 27017         | 27017     |
+
+Note: The frontend container runs internally on port 80, which is mapped to 8080 on the host machine.
+
+---
+
+## Stopping the Application
+
+    docker compose down
+
+To stop and remove volumes (including MongoDB data):
+
+    docker compose down -v
+
+---
+
+## Rebuilding After Code Changes
+
+    docker compose up --build
+
+---
+
+## Environment Variables
+
+The backend service uses the following environment variables defined in docker-compose.yml:
+
+- PORT=5000
+- MONGODB_URI=mongodb://mongo:27017/lumina_blog
+
+These variables configure backend service connectivity to the MongoDB container via Docker’s internal service networking.
